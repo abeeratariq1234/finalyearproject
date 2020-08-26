@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapplication.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.myapplication.ui.home.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reportmobile"
+        android:name="com.example.myapplication.ui.reportmobile.ReportMobileFragment"
+        android:label="Report Lost Mobile"
+        tools:layout="@layout/fragment_reportmobile" />
+
+    <fragment
+        android:id="@+id/nav_reportdoc"
+        android:name="com.example.myapplication.ui.Reportdoc.ReportDocFragment"
+        android:label="Report Lost Documents"
+        tools:layout="@layout/fragment_reportdoc" />
+    <fragment
+        android:id="@+id/nav_viewmobile"
+        android:name="com.example.myapplication.ui.viewmobile.ViewMobileFragment"
+        android:label="View Found Mobiles"
+        tools:layout="@layout/view_mobile_fragment" />
+    <fragment
+        android:id="@+id/nav_viewdoc"
+        android:name="com.example.myapplication.ui.viewdocument.ViewDocumentFragment"
+        android:label="View Found Documents"
+        tools:layout="@layout/view_document_fragment" />
+    <fragment
+        android:id="@+id/PostFoundItemFragment"
+        android:name="com.example.myapplication.ui.postfounditem.PostFoundItemFragment"
+        android:label="Post Found Items"
+        tools:layout="@layout/post_found_item_fragment" />
+    <fragment
+        android:id="@+id/LostItemsFragment"
+        android:name="com.example.myapplication.ui.lostitems.LostItemsFragment"
+        android:label="Lost Items"
+        tools:layout="@layout/lost_items_fragment" />
+</navigation>
